@@ -34,9 +34,9 @@ public class NotificationsRequestApplication {
 			@Override
 			public void run(String... args) throws Exception {
 				
-				NotificationsBO notifications = new NotificationsBO(4, 101, "Employee", "Tripsheet Generated", 4, LocalTime.now(), true, LocalTime.now(),new NotificationsMaster());
+				NotificationsBO notifications = new NotificationsBO(5, 102, "Employee", "Tripsheet Generated", 5, LocalTime.now(), false, LocalTime.now(),new NotificationsMaster());
 				transactionRepo.save(notifications);
-				NotificationsMaster notification = new NotificationsMaster(4, "Your trip sheet has been generated");
+				NotificationsMaster notification = new NotificationsMaster(5, "Your trip sheet has been generated");
 				masterRepo.save(notification);
 			}
 		};
