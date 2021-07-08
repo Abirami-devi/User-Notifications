@@ -1,5 +1,6 @@
 window.onload = function () {
 	httpGet();
+	userprofile();
   }
   var timeout = setInterval(httpGet,20000);
   function httpGet(){
@@ -116,6 +117,58 @@ window.onload = function () {
 	function imageChange(){
 	document.getElementById("notificationID").src = "images/notification.png";
 	httpGet();
+	}
+	//Notification js ends here 
+	
+	//User profile js starts here
+	
+	document.getElementById("userprofile-icon").addEventListener("click",userprofile);
+	
+  function userprofile(){
+	//alert("user profile");
+    var Http = new XMLHttpRequest();
+  Http.responseType = 'json';
+  const url='http://localhost:8080/api/v1/userprofile/'+1; // use own URL
+  console.log(url);
+  Http.onreadystatechange = function() {
+    if(this.readyState==4 && this.status==200) {
+      console.log(Http.response);
+      		userprofileData(Http.response);
+    }
+  }
+  Http.open("GET", url, true);
+  Http.send(); 
+  } 	
+
+	function userprofileData(data){
+				
+		var employeeName = document.getElementById("employeeName");
+		var domainName = document.getElementById("domainName");
+		var employeeId = document.getElementById("employeeId");
+		var domainLead = document.getElementById("domainLead");
+		var projectName = document.getElementById("projectName");
+		var projectLead = document.getElementById("projectLead");
+		var employeeIcon = document.getElementById("userprofile-icon");
+				
+		employeeName.innerHTML = data.employeeName;
+		domainName.innerHTML = data.domainName;
+		employeeId.innerHTML = "Employee Id: "+data.employeeId;
+		domainLead.innerHTML = "Domain Lead: "+ data.domainLead;
+		projectName.innerHTML = "Project: "+ data.projectName;
+		projectLead.innerHTML = "Project lead: " + data.projectLead;
+		
+		var splitName = data.employeeName.split(' ');
+    	var initials = splitName.shift().charAt(0) + splitName.pop().charAt(0);
+    	
+    	employeeIcon.innerHTML = initials;
+		
+	}
+	
+	var logoutButton = document.getElementById("logout");
+	logoutButton.addEventListener("click",logout);
+	
+	function logout(){
+		window.location.href = "/cab-application-login.html"			
 	}
 
 

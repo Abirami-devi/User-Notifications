@@ -264,11 +264,25 @@ body {
 #markAsRead{
 	cursor:pointer;
 }
+
+.navuserprofile-icon-text{
+	background-color: #1B2074;
+	color: white;
+	text-transform: uppercase;
+	opacity: 0.9;
+	font-size: 13px;
+	display: inline-block;
+	border-radius: 50%;
+	text-align: center;
+}
+
+/*Abi's code ends */
 .navuserprofile-icons{
     width:29px;
     height: 29px;
     margin-top: 7px; 
-    margin-right:5px  
+    margin-right:5px;
+    line-height: 29px;  
 }
 .customise-space{
     padding:0px 10px;

@@ -123,8 +123,9 @@
         <div class="header-right">
           <div class="dropdown col-md-12 float-start">
             
-              <img src="images/user-profile.png" class="navuserprofile-icons cursor"  alt="filter-icon" title="user-profile"  data-toggle="dropdown" aria-expanded="true"/>
-            
+<!--             <img src="images/user-profile.png" class="navuserprofile-icons cursor"  alt="filter-icon" title="user-profile"  data-toggle="dropdown" aria-expanded="true" id="userprofile-icon"/>
+-->     
+				 <span class="navuserprofile-icons cursor navuserprofile-icon-text" id="userprofile-icon" data-toggle="dropdown" aria-expanded="true"></span>       
           <div class="dropdown-menu m-0 p-3 profile-popover" >
             <div class="container-fluid">
                 <div class="row">
@@ -137,22 +138,22 @@
                       <div class="row mb-3">
                           <div>
                               
-                                <div class="row justify-content-center">
+                                <div class="row justify-content-center" id="userprofileData">
                                   <img src="images/user-profile-icon.png" class="user-profile-icon text-center" alt="profileicon">
-                                  <h6 class="username text-center mt-2">Nithya</h6>
+                                  <h6 class="username text-center mt-2" id="employeeName"></h6>
                                   <div>
-                                    <div class=" col-md-12 col-12 float-start userprofile-content pt-2">UX Designer</div>
-                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2">Emp ID: 4569</div>
-                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2">Domain Lead: Rafi</div>
-                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2">Project: Cab Application</div>
-                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2">Project lead: Rafi</div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content pt-2" id="domainName"></div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="employeeId"></div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="domainLead"></div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="projectName"></div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="projectLead"></div>
                                   </div>
                                 </div>
                               
                               </div>
                               <div class="row justify-content-center mb-3 mt-2">
                                 <div class="col-md-12 text-center">
-                                  <button type="button" class="btnlogoutbtn mt-2 ">Logout</button>
+                                  <button type="button" class="btnlogoutbtn mt-2 " id="logout">Logout</button>
                                  </div>
                            </div>
                           </div>
