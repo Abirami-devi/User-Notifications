@@ -125,10 +125,9 @@ window.onload = function () {
 	document.getElementById("userprofile-icon").addEventListener("click",userprofile);
 	
   function userprofile(){
-	//alert("user profile");
     var Http = new XMLHttpRequest();
   Http.responseType = 'json';
-  const url='http://localhost:8080/api/v1/userprofile/'+1; // use own URL
+  const url='http://localhost:8080/api/v1/userprofile/'+101; // use own URL
   console.log(url);
   Http.onreadystatechange = function() {
     if(this.readyState==4 && this.status==200) {
@@ -171,8 +170,53 @@ window.onload = function () {
 		window.location.href = "/cab-application-login.html"			
 	}
 
+	//User profile js starts here
 
-
-
-
+	//Admin contact js starts here
 	
+		document.getElementById("adminContactIcon").addEventListener("click",admin);
+	
+	function admin(){
+    var xhr = new XMLHttpRequest();
+ 	 xhr.responseType = 'json';
+ 	 var adminurl ='http://localhost:8080/api/v1/userprofile/admincontact'; // use own URL
+  	 console.log(adminurl);
+ 	 xhr.onreadystatechange = function() {
+    	if(this.readyState==4 && this.status==200) {
+      		console.log(xhr.response);
+      		admincontact(xhr.response);
+    }
+  }
+  xhr.open("GET", adminurl, true);
+  xhr.send(); 
+  } 
+  
+  
+  var adminContactData = document.getElementById("admin-contact");
+	
+	function admincontact(admindata){
+	adminContactData.innerHTML = " ";
+	for(var i = 0; i < admindata.length; i++){
+		
+		var div1 = document.createElement('div');
+		var adminContact = document.createElement('a');
+		var adminName = document.createElement('label');
+		
+		adminContact.className = "link contact-number";
+		adminContact.href = "#";
+		adminName.className = "float-start";
+
+		adminContact.innerHTML = admindata[i].employeeContact;
+//		adminName.innerHTML =  adminContact.innerHTML + "-" +admindata[i].employeeName;
+		adminName.innerHTML = "<a class='link contact-number' href='#'>" + admindata[i].employeeContact + "</a>" +"- "+admindata[i].employeeName;
+		//adminName.innerHTML = "- " + admindata[i].employeeName;		
+
+//		div1.appendChild(adminContact);				
+		div1.appendChild(adminName);
+
+		adminContactData.appendChild(div1);
+		}
+	}
+
+		//Admin contact js ends here
+

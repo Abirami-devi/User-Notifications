@@ -56,6 +56,14 @@ public class NotificationsController {
 		
 		return this.blObject.getEmployeeDetails(employeeId);
 	}
+	
+	@GetMapping(path = "/userprofile/admincontact")
+	public List<EmployeeBO> getAdminContact() {
+		
+		return this.blObject.getAdminContact();
+	}
+	
+	
 
 
 }

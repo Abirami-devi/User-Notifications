@@ -45,7 +45,7 @@ public class NotificationsRequestApplication {
 				NotificationsMaster notification = new NotificationsMaster(11, "Your trip sheet has been generated");
 				masterRepo.save(notification);
 				
-				EmployeeBO employeeData = new EmployeeBO(101, "Abi", "JAVA", "Arvinth", "Cab Application", "Rohit");
+				EmployeeBO employeeData = new EmployeeBO(125, "Santhosh", "IT Team", "RK", "Cab Application", "Vivek",true,987456321);
 				repo.save(employeeData);
 			}
 		};

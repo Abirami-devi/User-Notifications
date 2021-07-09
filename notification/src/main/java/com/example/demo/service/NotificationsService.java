@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,6 +55,18 @@ public class NotificationsService {
        	 return details;
     	}
 
+     public List<EmployeeBO> getAdminContact() {
+		
+    	 List<EmployeeBO> employeeDetails = this.repo.findAll();
+    	 List<EmployeeBO> admins = new ArrayList<>();;    	 
+    	 for(EmployeeBO eachEmployee : employeeDetails) {
+
+    		 if(eachEmployee.isAdmin()==true) {
+    			 admins.add(eachEmployee);
+    		 }
+       	 }
+		 return admins;
+       }
 
 
 

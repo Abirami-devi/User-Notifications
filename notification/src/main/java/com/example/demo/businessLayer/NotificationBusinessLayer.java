@@ -29,6 +29,11 @@ public class NotificationBusinessLayer {
 		
 		return this.service.getEmployeeDetails(employeeId);
 	}
+	
+	public List<EmployeeBO> getAdminContact() {
+		
+		return this.service.getAdminContact();
+	}
 
 
 }
